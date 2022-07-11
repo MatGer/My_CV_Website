@@ -207,6 +207,10 @@ footer a:not(.nav-link) {
   border-radius: 50%;
 }
 
+.wrap-text{
+  overflow: auto;
+}
+
 /* Additional utility styles */
 .container-narrow {
   max-width: 1024px;

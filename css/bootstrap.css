@@ -2907,15 +2907,6 @@ fieldset:disabled .btn {
   box-shadow: 0 0 30px black;
 }
 
-.btn-fixed-width{
-  width: 25rem;
-}
-
-.test{
-  background-color: green;
-  height: 100px;
-  width: 100px;
-}
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #000;
   background-color: #f7e576;
@@ -7220,6 +7211,10 @@ fieldset:disabled .btn {
 .mx-5 {
   margin-right: 4rem !important;
   margin-left: 4rem !important;
+}
+
+.width{
+  width: 100%
 }
 
 .mx-auto {
