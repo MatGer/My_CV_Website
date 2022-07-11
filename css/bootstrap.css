@@ -3981,13 +3981,18 @@ fieldset:disabled .btn {
   padding: 0.5rem 1rem;
   color: #212529;
   text-decoration: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
     transition: none;
   }
+}
+
+.nav-link:hover{
+  background-color: #F6E05E;
+  border-radius: 2rem;
 }
 
 .nav-link:hover, .nav-link:focus {
