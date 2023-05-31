@@ -27,64 +27,6 @@
       </style>
     </noscript>
     <script>
-      function tweakdates() {
-        var date_salonique=new Date('2021','02','01'); //months are minus 1 because range is from 0 to 11 
-        var date_metron=new Date('2022','10','27'); //months are minus 1 because range is from 0 to 11 
-        var datenow = new Date();
-        var month_now = datenow.getMonth();
-        document.getElementById("datecalc1").innerHTML+=calculate(datenow,date_salonique);
-        document.getElementById("datecalc2").innerHTML+=calculate(datenow,date_metron);
-      }
-
-      function calculate(now,since){
-        var text="";
-        var years = now.getFullYear() - since.getFullYear();
-        var months = now.getMonth() - since.getMonth();
-        //below if years=0 but year changes
-        if(years==1){
-          if(months<0){
-            months=now.getMonth() + 11 - since.getMonth() + 2;  //+2 because we add the month we started and the current month
-            if(months==0){
-              text = " Started this month.";
-            }else if(months==1){
-              text = " 1 month.";
-            }else{
-              text = " " + months + " months."
-            }
-            return text;
-          }
-        }
-        //below runs if years>=1
-        if(months<0){
-          months += 12; //+11 because month range is from 0 to 11 and +1 because we want to count the current month
-          years--;    //because its a year change (+1 year) but not whole year (12 months did not passed) so we give 11 months and take 1 year to find the difference in months
-        }
-        if(years>0){
-          if(years==1){
-            text=" 1 year ";
-          }else{
-            text=" "+ years + " years ";
-          }
-        }
-        if(months==0){
-          return text;
-        }
-        if(years==0){
-            if(months==1){
-              text+= " 1 month.";
-            }else{
-              text+= " "+ months +" months.";
-            }
-          }
-        else if(years>0){
-          if(months==1){
-            text+="and 1 month.";
-          }else{
-            text+="and "+ months +" months.";
-          }
-        }
-        return text;
-      }
     </script>
   </head>
   <body id="top" onload="tweakdates()">
@@ -118,7 +60,7 @@
           <div class="mt-5">
             <p class="lead mb-1">Hello!</p>
             <h1 class="intro-title" data-aos="fade-left" data-aos-delay="50">I’m Gerakis Matthaios</h1>
-            <p class="lead fw-normal mt-3" data-aos="fade-up" data-aos-delay="100">Information and Electronic Engineer</p>
+            <p class="lead fw-normal mt-3" data-aos="fade-up" data-aos-delay="100">Software Developer and Electronic Engineer</p>
             <div class="social-nav" data-aos="fade-up" data-aos-delay="200">
               <nav role="navigation">
                 <ul class="nav justify-content-left">
@@ -152,7 +94,7 @@
             <div class="pb-1">Age:</div>
           </div>
           <div class="col-sm-10">
-            <div class="pb-1 fw-bolder">24</div>
+            <div id="age" class="pb-1 fw-bolder"><!-- Age here --></div>
           </div>
           <div class="col-sm-2">
             <div class="pb-1">Email:</div>
@@ -517,5 +459,6 @@
     <script src="./scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
     <script src="./scripts/aos.min.js?ver=1.2.0"></script>
     <script src="./scripts/main.js?ver=1.2.0"></script>
+    <script src="./scripts/Calculations.js"></script>
   </body>
 </html>
