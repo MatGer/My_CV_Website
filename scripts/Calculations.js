@@ -1,10 +1,11 @@
 function tweakdates() {
     var date_salonique=new Date('2021','02','01'); //months are minus 1 because range is from 0 to 11 
-    var date_metron=new Date('2022','10','27'); //months are minus 1 because range is from 0 to 11 
+    var date_kuehne=new Date('2022','05','02'); //months are minus 1 because range is from 0 to 11 
+    var date_metron=new Date('2022','11','28'); //months are minus 1 because range is from 0 to 11 
     var datenow = new Date();
-    var month_now = datenow.getMonth();
     document.getElementById("datecalc1").innerHTML+=calculate(datenow,date_salonique);
-    document.getElementById("datecalc2").innerHTML+=calculate(datenow,date_metron);
+    document.getElementById("datecalc2").innerHTML+=calculate(new Date('2022','11','27'),date_kuehne);
+    document.getElementById("datecalc3").innerHTML+=calculate(datenow,date_metron);
     getAge();
   }
 
@@ -12,7 +13,7 @@ function tweakdates() {
     var text="";
     var years = now.getFullYear() - since.getFullYear();
     var months = now.getMonth() - since.getMonth();
-    //below if years=0 but year changes
+    //if years=0 but year changes
     if(years==1){
       if(months<0){
         months=now.getMonth() + 11 - since.getMonth() + 2;  //+2 because we add the month we started and the current month
@@ -21,12 +22,15 @@ function tweakdates() {
         }else if(months==1){
           text = " 1 month.";
         }else{
-          text = " " + months + " months."
+          text = " " + months + " months.";
+        }
+        if(months==12){
+          text = " 1 year.";
         }
         return text;
       }
     }
-    //below runs if years>=1
+    //if years>=1
     if(months<0){
       months += 12; //+11 because month range is from 0 to 11 and +1 because we want to count the current month
       years--;    //because its a year change (+1 year) but not whole year (12 months did not passed) so we give 11 months and take 1 year to find the difference in months
